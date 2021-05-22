@@ -2,7 +2,7 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const port = 3000;
+const port = 8001;
 
 //importando model
 const Anuncio = require("./models/Anuncio");
@@ -53,6 +53,16 @@ app.get("/visualizar/:id", async (req, res) => {
 
 /*********** route create ***********/
 app.post("/cadastrar", async (req, res) => {
+
+  //pausar o processamento por 3ms
+  
+  function sleep(ms){
+    return new Promise((resolve) => {
+      setTimeout(resolve, ms)
+    });
+  }
+  await sleep(3000);
+
   const resultCad = await Anuncio.create(req.body)
     .then(function () {
       return res.json({
