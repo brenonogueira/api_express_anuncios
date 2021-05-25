@@ -79,7 +79,15 @@ app.post("/cadastrar", async (req, res) => {
 });
 
 /*********** route update ***********/
-app.put("/editar/:id", async (req, res) => {
+app.put("/editar/", async (req, res) => {
+
+  function sleep(ms){
+    return new Promise((resolve) => {
+      setTimeout(resolve, ms)
+    });
+  }
+  await sleep(3000);
+
   await Anuncio.update(req.body, {
     where: { id: req.body.id },
   }).then(function () {
