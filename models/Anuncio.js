@@ -19,7 +19,12 @@ const Anuncio = db.define('anuncios', {
     descricao: {
         type: Sequelize.TEXT,
         allowNull: false
+    },
+    imagem: {
+        type: Sequelize.STRING,
+        allowNull: true
     }
+    
 })
 
 //Criar tabela

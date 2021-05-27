@@ -13,3 +13,6 @@ instalar o tipo de banco mysql
 
 liberar para acesso/consumo externo CORS
 ### npm install --save cors
+
+Multer é um middleware node.js para manipulação multipart/form-data, usado para o upload de arquivos 
+### npm install --save multer
